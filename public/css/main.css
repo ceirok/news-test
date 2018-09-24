@@ -1,0 +1,132 @@
+*, *:before, *:after{
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color:#839496;
+    transition: all .3s;
+}
+a:hover{
+    color: #fff;
+}
+.container {
+    width: 1440px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.header{
+    width: 100%;
+    background: #073642;
+    height: 60px;
+    padding: 15px;
+}
+.header .nav--container{
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo{
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+}
+.header .nav{
+    display: flex;
+    align-items: center;
+}
+.header .nav .nav--menu{
+    display: flex;
+    align-items: center;
+}
+.header .nav .nav--menu .nav--menu__item{
+
+}
+.header .nav .nav--menu .nav--menu__item a{
+    display: block;
+    margin: 0 10px;
+}
+.main{
+    width: 100%;
+    padding-top: 60px;
+}.main h1{
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 40px;
+ }
+.table{
+    width: 100%;
+}
+.table .table--head tr,
+.table .table--body tr{
+    border-bottom: 1px solid #ddd;
+}
+.table .table--body tr:nth-child(odd){
+    background: #eee;
+}
+.table .table--head th,
+.table .table--body td{
+    padding: 10px;
+    text-align: left;
+}
+.table .table--body .table--body--actions{
+    display: flex;
+}
+.table .table--body .table--body--actions .table--body--actions__item{
+    display: block;
+    padding: 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.table .table--body .table--body--actions__item.show{
+    background: #B58900;
+    color: #fff;
+}
+.table .table--body .table--body--actions__item.edit{
+    background: #073642;
+    color: #fff;
+}
+.table .table--body .table--body--actions__item.delete{
+    background: #CB4B16;
+    color: #fff;
+}
+form{
+    width: 480px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    background: #839496;
+    font-family: 'Lato', sans-serif;
+}
+form div{
+    margin-bottom: 20px;
+    width: 100%;
+}
+form div label{
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+form div input{
+    border: none;
+    height: 40px;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 10px;
+}
+form button[type=submit]{
+    border: none;
+    background: #B58900;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 3px;
+}

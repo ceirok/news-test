@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <h1>Articles</h1>
+    <table class="table">
+        <thead class="table--head">
+            <tr>
+                <th>Title</th>
+                <th><i class="fas fa-user"></i>Author</th>
+                <th><i class="fas fa-calendar-alt"></i>Published at</th>
+                <th><i class="fas fa-cogs"></i>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table--body">
+            <tr>
+                <td>John Smith</td>
+                <td>john.smith@test.com</td>
+                <td>24.09.2018 - 10:25</td>
+                <td class="table--body--actions">
+                    <a href="#" class="table--body--actions__item show">Show</a>
+                    <a href="#" class="table--body--actions__item edit">Edit</a>
+                    <a href="#" class="table--body--actions__item delete">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
