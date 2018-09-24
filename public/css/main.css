@@ -130,3 +130,10 @@ form button[type=submit]{
     color: #fff;
     border-radius: 3px;
 }
+.error{
+    padding: 20px;
+    border-radius: 3px;
+    background: #CB4B16;
+    color: #fff;
+    margin-bottom: 40px;
+}
