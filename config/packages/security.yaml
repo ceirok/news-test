@@ -3,7 +3,16 @@ security:
     encoders:
         App\Entity\User: bcrypt
     providers:
-        in_memory: { memory: ~ }
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: $2y$13$C3D/lnwWeh73axMnldcB.euo.Gkv4IThttEFp2.yaEWiIt585zbOa #here
+                        roles: 'ROLE_ADMIN'
+        db_provider:
+            entity:
+                class: App\Entity\User
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -13,6 +22,7 @@ security:
             form_login:
                 login_path: login
                 check_path: login
+            provider: db_provider
 
             # activate different ways to authenticate
 
