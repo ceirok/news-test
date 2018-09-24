@@ -74,6 +74,14 @@ a:hover{
 .table .table--body tr:nth-child(odd){
     background: #eee;
 }
+.table .table--head th i{
+    margin-right: 5px;
+    font-size: 14px;
+}
+.table .table--head th:last-child,
+.table .table--body td:last-child{
+    text-align: center;
+}
 .table .table--head th,
 .table .table--body td{
     padding: 10px;
@@ -81,12 +89,14 @@ a:hover{
 }
 .table .table--body .table--body--actions{
     display: flex;
+    justify-content: center;
 }
 .table .table--body .table--body--actions .table--body--actions__item{
     display: block;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
     margin-right: 5px;
+    font-size:14px;
 }
 .table .table--body .table--body--actions__item.show{
     background: #B58900;
@@ -119,6 +129,14 @@ form div label{
 form div input{
     border: none;
     height: 40px;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 10px;
+}
+form div textarea{
+    border: none;
+    height: 100px;
     width: 100%;
     border-radius: 3px;
     font-size: 16px;

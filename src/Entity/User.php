@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -50,9 +52,15 @@ class User implements UserInterface, \Serializable
      */
     private $roles = [];
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="author", orphanRemoval=true)
+     */
+    private $publishedAt;
+
     public function __construct()
     {
         $this->roles = array('ROLE_USER');
+        $this->publishedAt = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -180,5 +188,36 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password
             ) = unserialize($serialized);
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getPublishedAt(): Collection
+    {
+        return $this->publishedAt;
+    }
+
+    public function addArticle(Article $articles): self
+    {
+        if (!$this->$articles->contains($articles)) {
+            $this->$articles[] = $articles;
+            $articles->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticle(Article $articles): self
+    {
+        if ($this->publishedAt->contains($articles)) {
+            $this->$articles->removeElement($$articles);
+            // set the owning side to null (unless already changed)
+            if ($articles->getAuthor() === $this) {
+                $articles->setAuthor(null);
+            }
+        }
+
+        return $this;
     }
 }
